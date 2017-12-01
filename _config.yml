@@ -23,15 +23,15 @@ author:  # change following line to your infomation.
   #cv: http://cv.jarrekk.com  # An online CV can be printed as PDF, leave blank if you don't have now
   # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz
   skill_icon1:
-    - name: Python
-    - name: fa-linux
+    - name: icon-docker
+    - name: icon-centos
   skill_icon2:
-    - name: docker
-    - name: django
+    - name: icon-nginx
+    - name: icon-raspberrypi
   skill_icon3:
-    - name: Javascripts
-    - name: CSS
-  desc: Introduce myself will be here.  # Describe yourself.
+    - name: icon-go
+    - name: icon-python
+  desc: 自在如风~~.  # Describe yourself.
 
 # comment
 disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
