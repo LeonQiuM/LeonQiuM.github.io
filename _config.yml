@@ -25,10 +25,11 @@ author:  # change following line to your infomation.
   skill_icon1:
     - name: icon-docker
     - name: icon-centos
-    - name: icon-python
-    - name: icon-raspberrypi
-    - name: icon-javascript
     
+  skill_icon2:
+    - name: icon-python
+    - name: icon-go
+
   desc: 自在如风~~.  # Describe yourself.
 
 # comment
