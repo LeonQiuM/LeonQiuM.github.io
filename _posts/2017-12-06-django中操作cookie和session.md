@@ -19,6 +19,7 @@ icon: icon-html
 
 #### 在django中使用cookie
 + **实现保存用户登录状态**
+
 ```python
 # views.py
 def login(request):
@@ -56,12 +57,14 @@ def index(request):
 2.`response.set_cookie("字典的key"，'字典的值')` 后面不加参数的时候，只能设置一个当浏览器关闭就失效的cookie
 3.`response.set_cookie("username",'value',max_age=10)`  多少秒后过期的cookie
 4.通过datetime来设定过期
+
 ```python
 current_date = datetime.datetime.utcnow()
 current_date = current_date+ datetime.timedelta(seconds=10)   # 当前时间加上10s后
 response.set_cookie("username", u, expires=current_date)  # 设定到哪个时间点后失效，如果时间设置与当前时间相同，那么就是清除这个cookie
 ```
  5.设定cookie作用的路径
+
 ```
 response.set_cookie("username", u,path='/index/')  # 设置这个cookie只在当前url生效，例如设定一个cookie为当前页面显示多少条数据，别的页面就不会被干扰
 ```
@@ -70,6 +73,7 @@ response.set_cookie("username", u,path='/index/')  # 设置这个cookie只在当
 8.`httponly = True` 设置cookie只做为http传输，不可以被js获取到。在js中使用`document.cookie`获取可以所有cookie，或者使用JQuery也可以操作cookie
 
 9.带salt的cookie
+
 ```
 # 设定加盐
 COOKIE_SALT = "随机字符串"
@@ -126,6 +130,7 @@ Cookie的处理在开发中没有session方便。而且cookie在客户端是有�
 1. django默认使用`django.contrib.sessions.models.Session`模块，将session存储在数据库的`django_session `表中，当然这些都是可以配置的
 
 2. 所以需要在使用`database-backed sessions`前进行一定的设定，在数据库当中生成存储session的表以及字段
+
 ```shell
 python manage.py makemigrations
 python manage.py migrate
@@ -133,6 +138,7 @@ python manage.py migrate
 
 
 + **简单实现**
+
 ```
 # views.py
 def login(request):
@@ -212,6 +218,7 @@ request.session.set_expiry(value)
 
 1.引擎相关
 除了django自己支持的以下几种引擎以外，还可以使用redis作为session的存储，可以参考redis的设置方法    [猛戳](http://django-redis-chs.readthedocs.io/zh_CN/latest/#cache-backend)
+
 ```python
 # 数据库存储
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
