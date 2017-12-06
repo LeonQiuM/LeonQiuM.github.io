@@ -1,12 +1,12 @@
 # projects section data
 # If you don't have language feature(language.yml is empty), ignore "i18n" items
 # Suggest projects' img be located at '/static/assets/img/landing', and edit following img items.
-- name: Jalpc
-  i18n: jalpc
-  gh_user: jarrekk
-  repo: Jalpc
-  img: /static/assets/img/landing/jekyll.png
-  desc: This project is my project. I use javescript to get repo's information all my repos have only one request.
+- name: Urlooker二次开发
+  i18n: Urlooker-to-falcon
+  gh_user: LeonQiuM
+  repo: Urlooker-to-falcon
+  img: /static/assets/img/landing/16832691.png
+  desc: 在Urlooker的基础上，对其收集的数据进行二次加工处理，统一push到open-falcon进行统一监控报警
 
 - name: Python
   i18n: cpython
