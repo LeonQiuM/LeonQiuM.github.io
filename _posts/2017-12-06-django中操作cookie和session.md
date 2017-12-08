@@ -176,7 +176,7 @@ def index(request):
     else:
         return HttpResponse("Fuck off")
 ```
-+ 在这样的应用中访问会在数据库中生成以下数据
++  在这样的应用中访问会在数据库中生成以下数据
 
 ![session-table](/content/images/2017/11/session-table.png)
 
