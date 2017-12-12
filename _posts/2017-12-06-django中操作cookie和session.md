@@ -49,6 +49,7 @@ def index(request):
          return redirect('/login/')
     return render(request, 'index.html', {'current_user': ck})
 ```
+
 当用户名和密码验证成功后，在返回的`redirect`中设定`cookie`。通过这种简单的例子即可以实现保存用户的登录状态，当用户下一次访问index的时候就不在需要登录
 
 + **cookie的一些其他设定：**
@@ -63,11 +64,13 @@ current_date = datetime.datetime.utcnow()
 current_date = current_date+ datetime.timedelta(seconds=10)   # 当前时间加上10s后
 response.set_cookie("username", u, expires=current_date)  # 设定到哪个时间点后失效，如果时间设置与当前时间相同，那么就是清除这个cookie
 ```
+
  5.设定cookie作用的路径
 
 ```
 response.set_cookie("username", u,path='/index/')  # 设置这个cookie只在当前url生效，例如设定一个cookie为当前页面显示多少条数据，别的页面就不会被干扰
 ```
+
 6.`domain=''`  为当前设置cookie的域名
 7.`secure = False` 为https传输设置cookie
 8.`httponly = True` 设置cookie只做为http传输，不可以被js获取到。在js中使用`document.cookie`获取可以所有cookie，或者使用JQuery也可以操作cookie
@@ -176,6 +179,7 @@ def index(request):
     else:
         return HttpResponse("Fuck off")
 ```
+
 +  在这样的应用中访问会在数据库中生成以下数据
 
 ![session-table](/content/images/2017/11/session-table.png)
@@ -214,6 +218,7 @@ request.session.set_expiry(value)
     * 如果value是0,用户关闭浏览器session就会失效。
     * 如果value是None,session会依赖全局session失效策略。（默认是两个周）
 ```
+
 + **配置相关**
 
 1.引擎相关
